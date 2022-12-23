@@ -5,7 +5,7 @@ function Home() {
   const [user, setUser] = useState("");
   useEffect(() => {
     async function fetchData() {
-      const result = await axios.get("http://localhost:4001/welcome", {
+      const result = await axios.get("http://localhost:4001/users/welcome", {
         headers: {
           "x-access-token": localStorage.getItem("x-access-token"),
         },
@@ -18,7 +18,8 @@ function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <p>{user}</p>
+      <p>Id: {user.user_id}</p>
+      <p>Email: {user.email}</p>
     </div>
   );
 }

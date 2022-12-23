@@ -16,7 +16,7 @@ function Login() {
   const onLogin = async (e) => {
     e.preventDefault();
 
-    const result = await axios.post("http://localhost:4001/login", {
+    const result = await axios.post("http://localhost:4001/auth/login", {
       email,
       password,
     });
